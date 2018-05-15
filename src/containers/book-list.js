@@ -5,27 +5,27 @@ import { bindActionCreators } from 'redux';
 
 class BookList extends Component {
     renderList() {
-        return this.props.books.map(book => {
-            return (
-              <li 
-                key={book.title}
-                onClick={() => this.props.selectBook(book)}
-                className="list-group-item"
-              >
-                {book.title}
-              </li>
-            );
-        });
+      return this.props.books.map(book => {
+        return (
+          <li
+            key={book.title}
+            onClick={() => this.props.selectBook(book)}
+            className="list-group-item"
+          >
+            {book.title}
+          </li>
+        );
+      });
     }
 
-    render(){
+    render() {
         return (
-            <ul className="list-group col-sm-4">
+          <ul className="list-group col-sm-4">
             {this.renderList()}
-            </ul>
+          </ul>
         );
+      }
     }
-}
 
 function mapStateToProps(state){
     //whatever is returned will show up as props
